@@ -18,7 +18,7 @@
       # pip install dotenv    (Para ver las variables de configuracion en el archivo .env)
       # pip install functools (no es necesaria viene con venv)
 
-
+pip install -r requirements.txt
 
 Flask==3.0.0  
 psycopg2-binary==2.9.9 

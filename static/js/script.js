@@ -37,7 +37,7 @@ async function jugar(arma) {
 function mostrarFeedback(user, cpu, res) {
     const iconos = { piedra: '🪨', papel: '📄', tijera: '✂️' };
     const div = document.getElementById('resultado-ronda');
-    let color = res === 'ganaste' ? '#00ff41' : (res === 'perdiste' ? '#ff00ff' : '#ffff00');
+    let color = res === 'ganaste' ? '#34d399' : (res === 'perdiste' ? '#f87171' : '#fbbf24');
     div.innerHTML = `
         TU: ${iconos[user]} vs CPU: ${iconos[cpu]} <br>
         <span style="color: ${color}">¡${res.toUpperCase()}!</span>
@@ -70,11 +70,11 @@ async function cargarRanking() {
     const ranking = await response.json();
     const listaDiv = document.getElementById('lista-ranking');
     if (ranking.length === 0) {
-        listaDiv.innerHTML = "<p style='color:#444'>NO RECORDS</p>";
+        listaDiv.innerHTML = "<p style='color: var(--text-muted)'>NO RECORDS</p>";
         return;
     }
     listaDiv.innerHTML = ranking.map((p, i) => 
-        `<p>${i+1}. ${p.iniciales} <span style="color:#fff">....</span> ${p.puntos} PTS</p>`
+        `<p>${i+1}. ${p.iniciales} <span style="color: var(--text-muted)">....</span> ${p.puntos} PTS</p>`
     ).join('');
 }
 
